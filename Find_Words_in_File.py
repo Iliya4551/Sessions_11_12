@@ -1,20 +1,17 @@
-# find 3 letter words starting with b inside file
-import sys
-
-punctuation = ",.?!';\"" # punctuation we want to get rid of
 def find_words(filename):
     """
-    Prints 3 letter words starting with b from a file
+    Prints the 3 letter words starting with b
     :param filename: the name of the file
-    :return: None (nothing)
+    :return: nothing
     """
-    with open(filename) as f:
+    with open(filename, 'r') as f:
         for line in f:
-            for p in punctuation:
-                line = line.replace(p, " ")
-            words = line.split()
+
+            #We need to breakdown the line into words
+            words = line.split() # it splits by space on it's own
+            # Check each word
             for word in words:
-                if len(word) == 3 and word[0] in "bB":
+                if len(word) == 3 and word()[0] == "Bb" :#Len is the size of the word (Length)
                     print(word)
 
 find_words("input.txt")
